@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportably</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    {% load static %}
+    <script src="{% static 'home.js' %}" type="text/javascript"></script>  
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'report.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Times+New Roman&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-mainbg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'homepage' %}" href="javascript:void(0);" ></i>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}" href="javascript:void(0);"></i>About us</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'report' %}" href="javascript:void(0);"></i>Report</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'donate' %}" href="javascript:void(0);"></i>Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);"></i>Admin Login</a>
+                    </li>
+                </ul>
+                
+            </div>
+        </nav>
+    
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token%}
+       <div id="form-main">
+            <div id="form-div">
+                <form class="form" id="form1">
+                    <h10>Title the Malpractice?</h10>
+                    <p10 class="title">
+                        <br><br><br>
+                    {{form.complaint_title }}
+                    </p10>
+                    
+                    <br><br><br>          
+                <h1>Describe the Malpractice?</h1>
+                <p class="malpractice">
+                    <br><br><br><br><br><br><br><br>
+                {{form.problem}}
+                <br><br><br><br>
+                </p> 
+               
+   
+                <h2>Where did it happen?</h2>
+
+                <p1 class="location">
+                {{form.location}}
+                <br><br> <br>
+                </p1> 
+                
+                <h3>When did the Malpractice occur?</h3>
+                <p2>
+                    <br><br>
+                {{form.date}}
+                </p2>
+
+                <h4>Submit proofs of the incident:</h4>
+                <p3>
+                    <br><br>
+                {{form.document}}
+                
+                </p3>
+                <div class="container_report">
+                    <img src={% static "img/location.png" %}>
+                       <button class="btn">
+                            <a href="{% url 'report' %}">Pin Location</a>
+                       </button> 
+                    </div>
+            </div>
+        </div>
+        <div id="submission">
+            <input type="submit">
+        </div>
+    </form>
+</body>
+</html>

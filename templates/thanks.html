@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'thanks.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="content">
+      <div class="wrapper-1">
+        <div class="wrapper-2">
+          <h1>Thank you !</h1>
+          <p>Thank you for the donation.</p>
+          <p>Your payment has been directed to xyz NGO in Uttarakhand.</p>
+          <div class="go-home">
+            <a href="{% url 'homepage' %}">Go Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reportably</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        {% load static %}
+        <script src="{% static 'home.js' %}" type="text/javascript"></script>  
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'donate_form.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Times+New Roman&display=swap" rel="stylesheet">
+    </head>
+    <header>
+        <div id="background_gradient"></div> 
+    </header>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-mainbg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars text-white"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="javascript:void(0);" ></i>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about' %}" href="javascript:void(0);" ></i>About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'report' %}"href="javascript:void(0);" ></i>Report</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'donate' %}" href="javascript:void(0);"></i>Donate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);"></i>Admin Login</a>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </nav>
+            </head>
+<body>
+    <h>Donate for the Uttarakhand Relief fund</h>  
+    <div class="checkbox">
+        <input type="checkbox" id="checkbox" name="" value="">
+        <label for="checkbox"><span>Donate Anonymously</span></label>
+     </div>
+     <br>
+     <div class="checkbox">
+        <input type="checkbox" id="checkbox2" name="" value="">
+        <label for="checkbox2"><span>Donate Non-Anonymously</span></label>
+     </div>
+     <p1 class="name">
+        <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name of Donor" id="name" />
+    </p1>
+    <br>
+    <p2 class="contact">
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="Your contact number" id="contact"/>
+          
+    </p2>
+    <img src={% static "img/donate_timeline.png" %}>
+    <div class="container_report">
+        <img src={% static "img/report_button.png" %}>
+           <button class="btn">
+                <a href="{% url 'payment' %}">Pay Securely</a>
+           </button> 
+    </div>
+</body>
